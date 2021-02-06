@@ -1,6 +1,9 @@
 import React, {Component} from "react";
+import ZoriZavodService from '../../services/zori-zavod-service'
 
 export default class GasForm extends Component {
+
+    zoriZavodService = new ZoriZavodService()
 
     constructor(props) {
         super(props);
@@ -29,4 +32,3 @@ export default class GasForm extends Component {
         )
     }
 }
-// ReactDOM.render(<GasForm />, document.getElementById(root))
