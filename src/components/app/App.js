@@ -5,19 +5,23 @@ import ElectricityForm from "../electricityForm";
 import PostForm from "../../services/PostForm";
 import Menu from '../menu'
 import TechnologyForm from "../technology";
+import MiniDrawer from "../panel";
 
 export default class App extends Component {
     render() {
         return (
 
             <div className="App">
-                <div>
-                    <Menu />
-                </div>
 
-                <div className='float-right'>
-                    <TechnologyForm />
-                </div>
+                <MiniDrawer />
+
+                {/*<div>*/}
+                {/*    <Menu />*/}
+                {/*</div>*/}
+
+                {/*<div className='float-right'>*/}
+                {/*    <TechnologyForm />*/}
+                {/*</div>*/}
 
                 {/*<Header />*/}
 
