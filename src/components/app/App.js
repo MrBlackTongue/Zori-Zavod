@@ -6,6 +6,7 @@ import PostForm from "../../services/PostForm";
 import Menu from '../menu'
 import TechnologyForm from "../technology";
 import MiniDrawer from "../panel";
+import OperationDetails from "../operation-details/operation-details";
 
 export default class App extends Component {
 
@@ -13,7 +14,7 @@ export default class App extends Component {
 
          try {
 
-             let result = await fetch('https://webhook.site/5ad8c734-1904-4ba4-b06a-4f3d4401a863', {
+             let result = await fetch('http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/', {
                  method: 'post',
                  mode: 'no-cors',
                  headers: {
@@ -21,11 +22,9 @@ export default class App extends Component {
                      'Content-type': 'application/json',
                  },
                  body: JSON.stringify({
-                     id: 6,
-                     date: '2021-02-08',
-                     name: 'Svetka',
-                     meter: '100500',
-                     price: 5
+                     "name":"Мойка коры",
+                     "standard": 100,
+                     "ratio": 1.2
                  })
              })
 
@@ -45,6 +44,10 @@ export default class App extends Component {
                 <MiniDrawer />
                 <div className='align-content-center'>
                     <button onClick={() => this.postData()}>Press me to post data</button>
+                </div>
+
+                <div>
+                    <OperationDetails />
                 </div>
 
 
