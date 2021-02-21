@@ -8,7 +8,7 @@ export default class OperationDetails extends Component {
     zoriZavodService = new ZoriZavodService()
 
     state = {
-        operation: null
+        technology: null
     }
 
     componentDidMount() {
@@ -16,32 +16,32 @@ export default class OperationDetails extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.operationId !== prevProps.operationId) {
+        if (this.props.technologyId !== prevProps.technologyId) {
             this.updateOperation()
         }
     }
 
     updateOperation() {
-        const { operationId } = this.props
-        if (!operationId) {
+        const { technologyId } = this.props
+        if (!technologyId) {
             return
         }
 
         this.zoriZavodService
-            .getOperation(operationId)
-            .then((operation) => {
-                this.setState({ operation })
+            .getTechnology(technologyId)
+            .then((technology) => {
+                this.setState({ technology })
             })
     }
 
     render() {
 
-        const { operation } = this.state
-        if (!operation) {
-            return <span>Select a operation from a list</span>
+        const { technology } = this.state
+        if (!technology) {
+            return <span>Select a technology from a list</span>
         }
 
-        const { id, name, operations } = operation
+        const { name, operations } = technology
 
         return (
             <div className='operation-details card'>
@@ -50,7 +50,7 @@ export default class OperationDetails extends Component {
                     <h4>{name}</h4>
                     <ul className='list-group list-group-flush'>
                         <li className='list-group-item'>
-                            <span className='term'>Operation</span>
+                            <span className='term'>Operations</span>
                             <span>{operations}</span>
                         </li>
                     </ul>

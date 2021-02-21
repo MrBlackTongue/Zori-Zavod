@@ -29,4 +29,3 @@ export default class ElectricityForm extends Component {
         )
     }
 }
-// ReactDOM.render(<GasForm />, document.getElementById(root))

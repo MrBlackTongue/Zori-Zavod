@@ -2,11 +2,13 @@ http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/
 
 /api/tech/add/ - POST запрос, добавление технологии
 пример запроса:
+
 {
   "name":"Цукаты арбузные"
 }
 
 /api/operation/add/{id} - POST запрос, добавление операции, где {id} - id технологии
+
 пример запроса:
 {
   "name":"Мойка коры",
