@@ -5,6 +5,7 @@ import TechnologyPage from "../technology-page";
 
 import './app.css'
 import FetchRequest from "../../services/fetch";
+import PostForm from "../../services/PostForm";
 
 export default class App extends Component {
 
@@ -20,17 +21,16 @@ export default class App extends Component {
     //
     //      try {
     //
-    //          let result = await fetch(`http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/operation/add/30`, {
-    //              method: 'post',
+    //          let result = await fetch(`http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/tech/add/`, {
+    //              method: 'POST',
     //              mode: 'no-cors',
     //              headers: {
     //                  'Accept': 'application/json',
     //                  'Content-type': 'application/json',
     //              },
     //              body: JSON.stringify({
-    //                  "name":"Мойка коры",
-    //                  "standard": 100,
-    //                  "ratio": 1.2
+    //                  id: 3,
+    //                  name:"Джем",
     //              })
     //          })
     //
@@ -50,9 +50,9 @@ export default class App extends Component {
 
                 {/*<MiniDrawer />*/}
 
-
-
                 <FetchRequest />
+
+                <PostForm />
                 {/*<TechnologyPage />*/}
 
 
