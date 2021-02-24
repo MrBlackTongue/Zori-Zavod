@@ -21,7 +21,7 @@ class Menu extends React.Component {
                 {/*    {*/}
                 {/*        this.menuList.map((item, index) => (*/}
                 {/*            <li key={index} onClick={() => this.setState({activeIndex: index})}>*/}
-                {/*                <a class={this.state.activeIndex === index ? "menu-active": ""} href="#home">{ item.title }</a>*/}
+                {/*                <a class={this.state.activeIndex === index ? "menu-active": ""} href="#home">{ item.name }</a>*/}
                 {/*            </li>*/}
                 {/*        ))*/}
                 {/*    }*/}

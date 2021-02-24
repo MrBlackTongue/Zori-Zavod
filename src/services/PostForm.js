@@ -5,9 +5,9 @@ export class PostForm extends Component {
         super(props);
 
         this.state = {
-            userId: '',
-            title: '',
-            body: ''
+            // id: '',
+            name: "",
+            // operation: ''
         }
     }
 
@@ -19,7 +19,7 @@ export class PostForm extends Component {
         e.preventDefault()
         console.log(this.state)
         axios
-            .post('https://jsonplaceholder.typicode.com/posts', this.state)
+            .post('http://localhost:5000/api/tech/add/', this.state)
             .then(response => {
                 console.log(response)
             })
@@ -29,35 +29,35 @@ export class PostForm extends Component {
     }
 
     render() {
-        const {userId, title, body} = this.state
+        const { name, } = this.state
         return (
             <div>
                 <form onSubmit={this.submitHandler}>
+                    {/*<div>*/}
+                    {/*    <input*/}
+                    {/*        type='text'*/}
+                    {/*        name='id'*/}
+                    {/*        value={id}*/}
+                    {/*        onChange={this.changeHandler}*/}
+                    {/*    />*/}
+                    {/*</div>*/}
                     <div>
                         <input
                             type='text'
-                            name='userId'
-                            value={userId}
+                            name='name'
+                            value={name}
                             onChange={this.changeHandler}
                         />
                     </div>
-                    <div>
-                        <input
-                            type='text'
-                            name='title'
-                            value={title}
-                            onChange={this.changeHandler}
-                        />
-                    </div>
-                    <div>
-                        <input
-                            type='text'
-                            name='body'
-                            value={body}
-                            onChange={this.changeHandler}
-                        />
-                    </div>
-                    <button type='submit'>Submit</button>
+                    {/*<div>*/}
+                    {/*    <input*/}
+                    {/*        type='text'*/}
+                    {/*        name='operation'*/}
+                    {/*        value={operation}*/}
+                    {/*        onChange={this.changeHandler}*/}
+                    {/*    />*/}
+                    {/*</div>*/}
+                    <button type='submit'>Отправить</button>
                 </form>
             </div>
         )
