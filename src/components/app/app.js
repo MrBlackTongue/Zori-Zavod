@@ -17,6 +17,17 @@ export default class App extends Component {
         this.setState({ hasError: true})
     }
 
+    componentDidMount() {
+        const requestTechnology = {
+            method: 'POST',
+            headers: { 'Content-type': 'application/json'},
+            body: JSON.stringify({name: 'React POST Request Example'})
+        };
+        fetch(`http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/tech/add/`, requestTechnology)
+            .then(response => response.json())
+            // .then(data => this.setState({name: data.id}))
+    }
+
     // async postData() {
     //
     //      try {
@@ -25,12 +36,11 @@ export default class App extends Component {
     //              method: 'POST',
     //              mode: 'no-cors',
     //              headers: {
-    //                  'Accept': 'application/json',
+    //                   'Accept': 'application/json',
     //                  'Content-type': 'application/json',
     //              },
     //              body: JSON.stringify({
-    //                  id: 3,
-    //                  name:"Джем",
+    //                  name: "Sex",
     //              })
     //          })
     //

@@ -19,7 +19,7 @@ export class PostForm extends Component {
         e.preventDefault()
         console.log(this.state)
         axios
-            .post('http://localhost:5000/api/tech/add/', this.state)
+            .post('http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/tech/add/', this.state)
             .then(response => {
                 console.log(response)
             })
