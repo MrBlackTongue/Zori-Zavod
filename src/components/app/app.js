@@ -6,6 +6,7 @@ import TechnologyPage from "../technology-page";
 import './app.css'
 import FetchRequest from "../../services/fetch";
 import PostForm from "../../services/PostForm";
+import PostRequest from "../../services/requests";
 
 export default class App extends Component {
 
@@ -17,16 +18,31 @@ export default class App extends Component {
         this.setState({ hasError: true})
     }
 
-    componentDidMount() {
-        const requestTechnology = {
-            method: 'POST',
-            headers: { 'Content-type': 'application/json'},
-            body: JSON.stringify({name: 'React POST Request Example'})
-        };
-        fetch(`http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/tech/add/`, requestTechnology)
-            .then(response => response.json())
-            // .then(data => this.setState({name: data.id}))
-    }
+    // componentDidMount() {
+    //     const requestTechnology = {
+    //         method: 'POST',
+    //         headers: { 'Content-type': 'application/json'},
+    //         body: JSON.stringify({name: 'React POST Request Example'})
+    //     };
+    //     fetch(`http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/tech/add/`, requestTechnology)
+    //         .then(response => response.json())
+    //         // .then(data => this.setState({name: data.id}))
+    // }
+
+
+
+    // componentDidMount() {
+    //     const requestTechnology = {
+    //         method: 'POST',
+    //         headers: { 'Content-type': 'application/json'},
+    //         body: JSON.stringify({id: 10, name: 'Мойка коры', standard: 100, ratio: 1.2, technology: 10})
+    //     };
+    //     fetch(`http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/tech/add/`, requestTechnology)
+    //         .then(response => response.json())
+    //         // .then(data => this.setState({name: data.id}))
+    // }
+
+
 
     // async postData() {
     //
@@ -36,7 +52,7 @@ export default class App extends Component {
     //              method: 'POST',
     //              mode: 'no-cors',
     //              headers: {
-    //                   'Accept': 'application/json',
+    //                  'Accept': 'application/json',
     //                  'Content-type': 'application/json',
     //              },
     //              body: JSON.stringify({
@@ -60,9 +76,11 @@ export default class App extends Component {
 
                 {/*<MiniDrawer />*/}
 
-                <FetchRequest />
+                {/*<FetchRequest />*/}
 
-                <PostForm />
+                {/*<PostForm />*/}
+                <PostRequest />
+
                 {/*<TechnologyPage />*/}
 
 
