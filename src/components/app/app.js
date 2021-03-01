@@ -7,6 +7,7 @@ import './app.css'
 import FetchRequest from "../../services/fetch";
 import PostForm from "../../services/PostForm";
 import PostRequest from "../../services/requests";
+import PostRequestOperation from "../../services/post-request-operation";
 
 export default class App extends Component {
 
@@ -35,9 +36,9 @@ export default class App extends Component {
     //     const requestTechnology = {
     //         method: 'POST',
     //         headers: { 'Content-type': 'application/json'},
-    //         body: JSON.stringify({id: 10, name: 'Мойка коры', standard: 100, ratio: 1.2, technology: 10})
+    //         body: JSON.stringify({id: 10, name: 'Мока', standard: 100, ratio: 1.2, technology: 10})
     //     };
-    //     fetch(`http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/tech/add/`, requestTechnology)
+    //     fetch(`http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/tech/add/27`, requestTechnology)
     //         .then(response => response.json())
     //         // .then(data => this.setState({name: data.id}))
     // }
@@ -76,10 +77,11 @@ export default class App extends Component {
 
                 {/*<MiniDrawer />*/}
 
-                {/*<FetchRequest />*/}
+                <FetchRequest />
 
                 {/*<PostForm />*/}
-                <PostRequest />
+                {/*<PostRequest />*/}
+                <PostRequestOperation />
 
                 {/*<TechnologyPage />*/}
 

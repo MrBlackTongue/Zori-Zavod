@@ -20,4 +20,11 @@ http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/
 /api/operation/all - GET запрос.
 Возвращает все операции
 
-/api/tech/delete/{id} -
+
+api/tech/all - GET все технологии
+api/operation/all - GET все операции
+api/tech/delete/{id} -  DELETE технологию по id
+api/operation/delete/{id} -  DELETE операцию по id
+api/tech/add -  POST технологию
+api/tech/add/{id} -  POST операцию с id технологии
+api/tech/{id} -  GET технологию
