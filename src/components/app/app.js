@@ -4,7 +4,7 @@ import MiniDrawer from "../panel";
 import TechnologyPage from "../technology-page";
 
 import './app.css'
-import FetchRequest from "../../services/fetch";
+import FetchRequest from "../../services/fetch-request";
 import PostForm from "../../services/PostForm";
 import PostRequest from "../../services/requests";
 import PostRequestOperation from "../../services/post-request-operation";
@@ -81,7 +81,7 @@ export default class App extends Component {
 
                 {/*<PostForm />*/}
                 {/*<PostRequest />*/}
-                <PostRequestOperation />
+                {/*<PostRequestOperation />*/}
 
                 {/*<TechnologyPage />*/}
 

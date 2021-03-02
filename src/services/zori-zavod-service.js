@@ -12,9 +12,6 @@ export default class ZoriZavodService {
     return await res.json()
     }
 
-    // let myMode = myResource.
-
-
         // getAllGas = async () => {
     //     const res = await this.getResource(`/gas/`)
     //     return res.results
@@ -22,12 +19,12 @@ export default class ZoriZavodService {
     //         .slice(0, 5)
     // }
 
-    // getAllTechnologies = async () => {
-    //     const res = await this.getResource(`/tech/all/`)
-    //     return res.results
-    //         .map(this._transformTechnology)
-    //         .slice(0, 5)
-    // }
+    getAllTechnologies = async () => {
+        const res = await this.getResource(`/tech/all/`)
+        return res.results
+            // .map(this._transformTechnology)
+            // .slice(0, 5)
+    }
 
     getTechnology = async (id) => {
         const technology = await this.getResource(`/tech/${id}/`)
@@ -46,10 +43,10 @@ export default class ZoriZavodService {
     //     return this._transformOperation(operation)
     // }
 
-    // _extractId = (item) => {
-    //     const idRegExp = /\/([0-9]*)\/$/
-    //     return item.url.match(idRegExp)[1]
-    // }
+    _extractId = (item) => {
+        const idRegExp = /\/([0-9]*)\/$/
+        return item.url.match(idRegExp)[1]
+    }
 
     // _transformGas = (gas) => {
     //     return {
@@ -72,7 +69,7 @@ export default class ZoriZavodService {
 
     _transformTechnology = (technology) => {
         return {
-            // id: this._extractId(technology),
+            id: this._extractId(technology),
             name: technology.name,
             // operations: technology.operations
         }

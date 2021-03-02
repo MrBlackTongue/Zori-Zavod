@@ -8,7 +8,7 @@ import './technology-page.css'
 export default class TechnologyPage extends Component {
 
     state = {
-        selectedTechnology: 1,
+        selectedTechnology:  22,
         hasError: false
     }
 

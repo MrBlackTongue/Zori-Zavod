@@ -1,24 +1,38 @@
 import React from "react";
+import './fetch-request.css'
 
 export default class FetchRequest extends React.Component {
     state = {
         loading: true,
         operations: [],
-        technology: []
+        technology: [],
+        technology_Id: ''
     };
 
     async componentDidMount() {
-        const url = `http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/operation/all`
+        const url = `http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/tech/all`
 
-        const url2 = `http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/tech/all`
+        const url2 = `http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/tech/`
 
-        // const url2 = "https://api.randomuser.me/"
-
-        const responce = await fetch(url2)
+        const responce = await fetch(url)
         const data = await responce.json()
 
         this.setState({technology: data, loading: false})
         console.log(data);
+
+    }
+
+    onClick = () => {
+
+        const menuElem = document.getElementById('technology');
+
+        const titleElem = menuElem.querySelector('.title');
+
+        titleElem.onclick = function() {
+            menuElem.classList.toggle('open');
+        };
+
+        // document.getElementById('operations').hidden = false
     }
 
     render() {
@@ -34,20 +48,26 @@ export default class FetchRequest extends React.Component {
         return (
             <div>
                 {this.state.technology.map((technology) => (
-                    <div key={technology}>
-                        <div>Технология: {technology.name}</div>
-                        <div>id = {technology.id}</div>
+                    <div key={technology} id='technology' className='menu'>
+                        <span onClick={this.onClick} className='title'>Технология: {technology.name}</span>
+                        {/*<li>id = {technology.id}</li>*/}
 
-                        <div>operations: {technology.operations.map(
+
+
+                        <ul
+                            // id='operations'hidden
+                        >operations: {technology.operations.map(
                             (operation) => (
-                                <div key={operation}>
-                                    <div>id: {operation.id}</div>
+                                <li key={operation}>
+                                    {/*<div>id: {operation.id}</div>*/}
                                     <div>{operation.name}</div>
                                     {/*<div>{operation.technology}</div>*/}
                                     {/*<div>standard: {operation.standard}</div>*/}
-                                </div>
+                                </li>
                             )
-                        )}</div>
+                        )}</ul>
+
+
 
 
                         {/*<div>{this.state.technology.operations}</div>*/}

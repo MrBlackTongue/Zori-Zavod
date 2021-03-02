@@ -9,11 +9,11 @@ export default class ItemList extends Component {
     zoriZavodService = new ZoriZavodService();
 
     state = {
-        technologyList: 1
+        technologyList: null
     };
 
     componentDidMount() {
-        this.zoriZavodService.getTechnology(1)
+        this.zoriZavodService.getAllTechnologies()
             .then((technologyList) => {
                 this.setState({
                     technologyList

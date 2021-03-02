@@ -15,11 +15,11 @@ export default class OperationDetails extends Component {
         this.updateOperation()
     }
 
-    componentDidUpdate(prevProps) {
-        if (this.props.technologyId !== prevProps.technologyId) {
-            this.updateOperation()
-        }
-    }
+    // componentDidUpdate(prevProps) {
+    //     if (this.props.technologyId !== prevProps.technologyId) {
+    //         this.updateOperation()
+    //     }
+    // }
 
     updateOperation() {
         const { technologyId } = this.props
