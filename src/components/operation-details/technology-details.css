@@ -1,4 +1,4 @@
-.operation-details {
+.technology-details {
     display: flex;
     flex-direction: row;
     padding: 1rem;
@@ -11,14 +11,14 @@
 /*    border-radius: 10px;*/
 /*}*/
 
-.operation-details .list-group-item {
+.technology-details .list-group-item {
     padding: .25rem;
 }
 
-.operation-details .list-group-item .term{
+.technology-details .list-group-item .term{
     margin-right: .5rem;
 }
 
-.operation-details button {
+.technology-details button {
     margin-top: 5px;
 }

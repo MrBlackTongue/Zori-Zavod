@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
-import './operation-details.css'
+import './technology-details.css'
 import ZoriZavodService from "../../services/zori-zavod-service";
 
-export default class OperationDetails extends Component {
+export default class TechnologyDetails extends Component {
 
     zoriZavodService = new ZoriZavodService()
 
@@ -15,16 +15,16 @@ export default class OperationDetails extends Component {
         this.updateOperation()
     }
 
-    // componentDidUpdate(prevProps) {
-    //     if (this.props.technologyId !== prevProps.technologyId) {
-    //         this.updateOperation()
-    //     }
-    // }
+    componentDidUpdate(prevProps) {
+        if (this.props.technologyId !== prevProps.technologyId) {
+            this.updateOperation()
+        }
+    }
 
     updateOperation() {
         const { technologyId } = this.props
         if (!technologyId) {
-            return
+            return;
         }
 
         this.zoriZavodService
@@ -41,21 +41,38 @@ export default class OperationDetails extends Component {
             return <span>Select a technology from a list</span>
         }
 
-        const { name, operations } = technology
+        const { name , operations } = technology
 
         return (
-            <div className='operation-details card'>
+            <div className='technology-details card'>
 
                 <div className='card-body'>
                     <h4>{name}</h4>
                     <ul className='list-group list-group-flush'>
                         <li className='list-group-item'>
                             <span className='term'>Operations</span>
-                            <span>{operations}</span>
+                            <span>{name}</span>
                         </li>
+                        {/*<li className='list-group-item'>*/}
+                        {/*    <span className='term'>Operations</span>*/}
+                        {/*    <span>{operations}</span>*/}
+                        {/*</li>*/}
                     </ul>
                 </div>
             </div>
         )
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

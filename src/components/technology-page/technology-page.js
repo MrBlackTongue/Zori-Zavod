@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import ItemList from '../item-list'
-import OperationDetails from "../operation-details/operation-details";
+import TechnologyDetails from "../operation-details/technology-details";
 
 import './technology-page.css'
 
@@ -31,7 +31,7 @@ export default class TechnologyPage extends Component {
                     <ItemList onItemSelected={this.onTechnologySelected} />
                 </div>
                 <div className='col-md-6'>
-                    <OperationDetails operationId={this.state.selectedTechnology} />
+                    {/*<TechnologyDetails technologyId={this.state.selectedTechnology} />*/}
                 </div>
             </div>
         )

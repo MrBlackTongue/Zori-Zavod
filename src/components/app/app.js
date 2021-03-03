@@ -83,7 +83,7 @@ export default class App extends Component {
                 {/*<PostRequest />*/}
                 {/*<PostRequestOperation />*/}
 
-                {/*<TechnologyPage />*/}
+                <TechnologyPage />
 
 
 

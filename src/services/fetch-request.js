@@ -48,15 +48,19 @@ export default class FetchRequest extends React.Component {
         return (
             <div>
                 {this.state.technology.map((technology) => (
-                    <div key={technology} id='technology' className='menu'>
-                        <span onClick={this.onClick} className='title'>Технология: {technology.name}</span>
+                    <div key={technology}
+                         id='technology'
+                         className='menu'>
+                        <span onClick={this.onClick}
+                              className='title'>
+                            Технология: {technology.name}
+                        </span>
+
                         {/*<li>id = {technology.id}</li>*/}
-
-
-
-                        <ul
+                        <ul className='float-right'
                             // id='operations'hidden
-                        >operations: {technology.operations.map(
+                        >
+                            operations: {technology.operations.map(
                             (operation) => (
                                 <li key={operation}>
                                     {/*<div>id: {operation.id}</div>*/}
@@ -66,8 +70,6 @@ export default class FetchRequest extends React.Component {
                                 </li>
                             )
                         )}</ul>
-
-
 
 
                         {/*<div>{this.state.technology.operations}</div>*/}
