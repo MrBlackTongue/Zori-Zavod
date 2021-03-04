@@ -88,7 +88,6 @@ export default class ZoriZavodService {
             ratio: technology.operations.map((ratio) => (
                 ratio.ratio
             )),
-            // technology: technology.technology
         }
     }
     //

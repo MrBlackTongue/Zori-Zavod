@@ -8,6 +8,7 @@ import FetchRequest from "../../services/fetch-request";
 import PostForm from "../../services/PostForm";
 import PostRequest from "../../services/requests";
 import PostRequestOperation from "../../services/post-request-operation";
+import ItemListOperation from "../item-list-operation";
 
 export default class App extends Component {
 
@@ -84,6 +85,8 @@ export default class App extends Component {
                 {/*<PostRequestOperation />*/}
 
                 <TechnologyPage />
+
+                {/*<ItemListOperation />*/}
 
 
 
