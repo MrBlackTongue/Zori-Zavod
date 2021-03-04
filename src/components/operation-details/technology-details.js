@@ -41,7 +41,7 @@ export default class TechnologyDetails extends Component {
             return <span>Select a technology from a list</span>
         }
 
-        const { name , operations } = technology
+        const { name , operations, standard, ratio } = technology
 
         return (
             <div className='technology-details card'>
@@ -51,12 +51,16 @@ export default class TechnologyDetails extends Component {
                     <ul className='list-group list-group-flush'>
                         <li className='list-group-item'>
                             <span className='term'>Operations</span>
-                            <span>{name}</span>
+                            <span>{operations}</span>
                         </li>
-                        {/*<li className='list-group-item'>*/}
-                        {/*    <span className='term'>Operations</span>*/}
-                        {/*    <span>{operations}</span>*/}
-                        {/*</li>*/}
+                        <li className='list-group-item'>
+                            <span className='term'>Standard</span>
+                            <span>{standard}</span>
+                        </li>
+                        <li className='list-group-item'>
+                            <span className='term'>Ratio</span>
+                            <span>{ratio}</span>
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -57,9 +57,8 @@ export default class FetchRequest extends React.Component {
                         </span>
 
                         {/*<li>id = {technology.id}</li>*/}
-                        <ul className='float-right'
-                            // id='operations'hidden
-                        >
+                        <ul className='float-right'>
+                             {/*id='operations'hidden*/}
                             operations: {technology.operations.map(
                             (operation) => (
                                 <li key={operation}>

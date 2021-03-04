@@ -31,7 +31,7 @@ export default class TechnologyPage extends Component {
                     <ItemList onItemSelected={this.onTechnologySelected} />
                 </div>
                 <div className='col-md-6'>
-                    {/*<TechnologyDetails technologyId={this.state.selectedTechnology} />*/}
+                    <TechnologyDetails technologyId={this.state.selectedTechnology} />
                 </div>
             </div>
         )

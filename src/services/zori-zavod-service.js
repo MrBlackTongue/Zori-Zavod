@@ -26,10 +26,10 @@ export default class ZoriZavodService {
             // .slice(0, 5)
     }
 
-    // getTechnology = async (id) => {
-    //     const technology = await this.getResource(`/tech/${id}/`)
-    //     return this._transformTechnology(technology)
-    // }
+    getTechnology = async (id) => {
+        const technology = await this.getResource(`/tech/${id}/`)
+        return this._transformOperations(technology)
+    }
 
     // getAllOperations = async () => {
     //     const res = await this.getResource(`/operation/all/`)
@@ -43,10 +43,10 @@ export default class ZoriZavodService {
     //     return this._transformOperation(operation)
     // }
 
-    // _extractId = (item) => {
-    //     const idRegExp = /\/([0-9]*)\/$/;
-    //     return item.url.match(idRegExp)[1];
-    // }
+    _extractId = (item) => {
+        const idRegExp = /\/([0-9]*)\/$/;
+        return item.url.match(idRegExp)[1];
+    }
 
     // _transformGas = (gas) => {
     //     return {
@@ -75,15 +75,22 @@ export default class ZoriZavodService {
         }
     }
 
-    // _transformOperations = (operation) => {
-    //     return {
-    //         id: operation.id,
-    //         name: operation.name,
-    //         standard: operation.standard,
-    //         ratio: operation.ratio,
-    //         technology: operation.technology
-    //     }
-    // }
+    _transformOperations = (technology) => {
+        return {
+            id: technology.id,
+            name: technology.name,
+            operations: technology.operations.map((operation) => (
+                operation.name
+            )),
+            standard: technology.operations.map((standard) => (
+                standard.standard
+            )),
+            ratio: technology.operations.map((ratio) => (
+                ratio.ratio
+            )),
+            // technology: technology.technology
+        }
+    }
     //
     // _transformOperation = (operation) => {
     //     return {

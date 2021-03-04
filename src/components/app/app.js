@@ -77,7 +77,7 @@ export default class App extends Component {
 
                 {/*<MiniDrawer />*/}
 
-                <FetchRequest />
+                {/*<FetchRequest />*/}
 
                 {/*<PostForm />*/}
                 {/*<PostRequest />*/}
