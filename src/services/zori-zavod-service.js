@@ -31,12 +31,10 @@ export default class ZoriZavodService {
         return this._transformOperations(technology)
     }
 
-    // getAllOperations = async () => {
-    //     const res = await this.getResource(`/operation/all/`)
-    //     return res.results
-    //         .map(this._transformOperation)
-    //         .slice(0, 5)
-    // }
+    getAllOperationsTech = async (id) => {
+        const res = await this.getResource(`/tech/${id}/operation/all`)
+        return res
+    }
 
     // getOperation = async (id) => {
     //     const operation = await this.getResource(`/operation/${id}/`)

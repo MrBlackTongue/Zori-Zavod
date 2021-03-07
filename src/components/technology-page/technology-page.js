@@ -4,6 +4,7 @@ import ItemList from '../item-list'
 import TechnologyDetails from "../operation-details/technology-details";
 
 import './technology-page.css'
+import ItemListOperation from "../item-list-operation";
 
 export default class TechnologyPage extends Component {
 
@@ -31,7 +32,9 @@ export default class TechnologyPage extends Component {
                     <ItemList onItemSelected={this.onTechnologySelected} />
                 </div>
                 <div className='col-md-6'>
+
                     <TechnologyDetails technologyId={this.state.selectedTechnology} />
+
                 </div>
             </div>
         )

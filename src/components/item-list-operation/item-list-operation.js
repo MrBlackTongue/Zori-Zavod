@@ -15,7 +15,7 @@ export default class ItemListOperation extends Component {
     }
 
     componentDidMount() {
-        this.zoriZavodService.getTechnology(22)
+        this.zoriZavodService.getAllOperationsTech(22)
             .then((operationList) => {
                 this.setState({
                     operationList
@@ -28,7 +28,8 @@ export default class ItemListOperation extends Component {
             return (
                 <li className="list-group-item"
                     key={id}
-                    onClick={() => this.props.onItemSelected(id)}>
+                    // onClick={() => this.props.onItemSelected(id)}
+                >
                     {name}
                 </li>
             );
@@ -46,7 +47,7 @@ export default class ItemListOperation extends Component {
         const items = this.renderItems(operationList)
 
         return (
-            <ul className='item-list list-group'>
+            <ul className='list-group list-group-flush'>
                 {items}
             </ul>
         )

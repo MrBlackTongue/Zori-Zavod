@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 
 import './technology-details.css'
 import ZoriZavodService from "../../services/zori-zavod-service";
+import ItemListOperation from "../item-list-operation";
 
 export default class TechnologyDetails extends Component {
 
     zoriZavodService = new ZoriZavodService()
 
     state = {
-        technology: null
+        technology: null,
     }
 
     componentDidMount() {
@@ -50,17 +51,18 @@ export default class TechnologyDetails extends Component {
 
                     <ul className='list-group list-group-flush'>
                         <li className='list-group-item'>
-                            <span className='term'>Operations</span>
-                            <span>{operations}</span>
+                            <span className='term'>Операции:</span>
+                            <ItemListOperation />
+                            {/*<span>{operations}</span>*/}
                         </li>
-                        <li className='list-group-item'>
-                            <span className='term'>Standard</span>
-                            <span>{standard}</span>
-                        </li>
-                        <li className='list-group-item'>
-                            <span className='term'>Ratio</span>
-                            <span>{ratio}</span>
-                        </li>
+                        {/*<li className='list-group-item'>*/}
+                        {/*    <span className='term'>Standard</span>*/}
+                        {/*    <span>{standard}</span>*/}
+                        {/*</li>*/}
+                        {/*<li className='list-group-item'>*/}
+                        {/*    <span className='term'>Ratio</span>*/}
+                        {/*    <span>{ratio}</span>*/}
+                        {/*</li>*/}
                     </ul>
                 </div>
             </div>
