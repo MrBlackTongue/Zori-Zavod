@@ -56,11 +56,11 @@ export default class ZoriZavodService {
     //     }
     // }
 
-    // _transformTechnologies = (technology) => {
+    // _transformTechnologies = (operation) => {
     //     return {
-    //         id: technology.id,
-    //         name: technology.name,
-    //         operations: technology.operations,
+    //         id: operation.id,
+    //         name: operation.name,
+    //         operations: operation.operations,
     //
     //     }
     // }
@@ -69,7 +69,7 @@ export default class ZoriZavodService {
         return {
             id: this._extractId(technology),
             name: technology.name,
-            // operations: technology.operations,
+            // operations: operation.operations,
         }
     }
 

@@ -24,7 +24,7 @@ export default class FetchRequest extends React.Component {
 
     onClick = () => {
 
-        const menuElem = document.getElementById('technology');
+        const menuElem = document.getElementById('operation');
 
         const titleElem = menuElem.querySelector('.title');
 
@@ -56,7 +56,7 @@ export default class FetchRequest extends React.Component {
                             Технология: {technology.name}
                         </span>
 
-                        {/*<li>id = {technology.id}</li>*/}
+                        {/*<li>id = {operation.id}</li>*/}
                         <ul className='float-right'>
                              {/*id='operations'hidden*/}
                             operations: {technology.operations.map(
@@ -64,17 +64,17 @@ export default class FetchRequest extends React.Component {
                                 <li key={operation}>
                                     {/*<div>id: {operation.id}</div>*/}
                                     <div>{operation.name}</div>
-                                    {/*<div>{operation.technology}</div>*/}
+                                    {/*<div>{operation.operation}</div>*/}
                                     {/*<div>standard: {operation.standard}</div>*/}
                                 </li>
                             )
                         )}</ul>
 
 
-                        {/*<div>{this.state.technology.operations}</div>*/}
+                        {/*<div>{this.state.operation.operations}</div>*/}
                         {/*<div>{this.state.test.name.first}</div>*/}
                         {/*<div>{this.state.test.operations[]}</div>*/}
-                        {/*<div>{this.state.technology.name.last}</div>*/}
+                        {/*<div>{this.state.operation.name.last}</div>*/}
                     </div>
 
                 ))}

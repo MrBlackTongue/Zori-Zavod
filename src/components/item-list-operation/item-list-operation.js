@@ -11,15 +11,33 @@ export default class ItemListOperation extends Component {
     zoriZavodService = new ZoriZavodService()
 
     state = {
-        operationList: null
+        operationList: null,
     }
 
+    // onTechnologySelected = (selectedTechnology) => {
+    //     this.setState({selectedTechnology})
+    // }
+
     componentDidMount() {
-        this.zoriZavodService.getAllOperationsTech(22)
+        this.updateOperation()
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.technologyId !== prevProps.technologyId) {
+            this.updateOperation()
+        }
+    }
+
+    updateOperation() {
+        const { technologyId } =this.props
+        if (!technologyId) {
+            return
+        }
+
+        this.zoriZavodService
+            .getAllOperationsTech(technologyId)
             .then((operationList) => {
-                this.setState({
-                    operationList
-                })
+                this.setState({ operationList })
             })
     }
 

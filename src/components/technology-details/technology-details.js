@@ -50,11 +50,10 @@ export default class TechnologyDetails extends Component {
                     <h4>{name}</h4>
 
                     <ul className='list-group list-group-flush'>
-                        <li className='list-group-item'>
-                            <span className='term'>Операции:</span>
-                            <ItemListOperation />
-                            {/*<span>{operations}</span>*/}
-                        </li>
+                        {/*<li className='list-group-item'>*/}
+                        {/*    <span className='term'>Операции:</span>*/}
+                        {/*    /!*<span>{operations}</span>*!/*/}
+                        {/*</li>*/}
                         {/*<li className='list-group-item'>*/}
                         {/*    <span className='term'>Standard</span>*/}
                         {/*    <span>{standard}</span>*/}
