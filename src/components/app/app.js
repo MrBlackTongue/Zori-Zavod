@@ -82,9 +82,11 @@ export default class App extends Component {
 
                 {/*<PostForm />*/}
                 {/*<PostRequest />*/}
-                {/*<PostRequestOperation />*/}
 
                 <TechnologyPage />
+
+                {/*<PostRequestOperation />*/}
+
 
                 {/*<ItemListOperation />*/}
 

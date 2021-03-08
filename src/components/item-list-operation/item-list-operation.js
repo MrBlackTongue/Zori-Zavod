@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './item-list-operation.css';
 import ZoriZavodService from "../../services/zori-zavod-service";
 import Spinner from "../spinner/spinner";
+import TechnologyPage from "../technology-page";
 
 export default class ItemListOperation extends Component {
 
@@ -39,15 +40,21 @@ export default class ItemListOperation extends Component {
             })
     }
 
+
     renderItems(arr) {
         return arr.map(({id, name, standard, ratio}) => {
             return (
-                <li className="list-group-item"
-                    key={id}
-                    // onClick={() => this.props.onItemSelected(id)}
-                >
-                    {name} ( Стандарт: {standard} ) ( Ратио: {ratio} )
-                </li>
+                <div>
+                    <li className="list-group-item"
+                        key={id}
+                        // onClick={() => this.props.onItemSelected(id)}
+                    >
+                        <input type='checkbox' className='checkbox'/>
+                        &nbsp; {name} ( Стандарт: {standard} ) ( Ратио: {ratio} )
+
+                    </li>
+                </div>
+
             );
         });
     }
@@ -67,7 +74,7 @@ export default class ItemListOperation extends Component {
                 <ul className='item-list list-group'>
                     {items}
                 </ul>
-                <input type='submit'/>
+                {/*<input type='submit'/>*/}
             </div>
         )
     }
