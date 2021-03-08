@@ -4,8 +4,6 @@ import './item-list-operation.css';
 import ZoriZavodService from "../../services/zori-zavod-service";
 import Spinner from "../spinner/spinner";
 
-// Нужно доделать код в этом файле а потом добавить его в арр и внести изменения в сервис. добавить все операции, чтобы можно было массивом проходить. Спросить совета у Димы по оформлению
-
 export default class ItemListOperation extends Component {
 
     zoriZavodService = new ZoriZavodService()
@@ -42,13 +40,13 @@ export default class ItemListOperation extends Component {
     }
 
     renderItems(arr) {
-        return arr.map(({id, name}) => {
+        return arr.map(({id, name, standard, ratio}) => {
             return (
                 <li className="list-group-item"
                     key={id}
                     // onClick={() => this.props.onItemSelected(id)}
                 >
-                    {name}
+                    {name} ( Стандарт: {standard} ) ( Ратио: {ratio} )
                 </li>
             );
         });
@@ -65,9 +63,12 @@ export default class ItemListOperation extends Component {
         const items = this.renderItems(operationList)
 
         return (
-            <ul className='list-group list-group-flush'>
-                {items}
-            </ul>
+            <div>
+                <ul className='item-list list-group'>
+                    {items}
+                </ul>
+                <input type='submit'/>
+            </div>
         )
     }
 }
