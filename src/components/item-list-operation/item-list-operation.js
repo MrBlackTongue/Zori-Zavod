@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import './item-list-operation.css';
 import ZoriZavodService from "../../services/zori-zavod-service";
 import Spinner from "../spinner/spinner";
-import TechnologyPage from "../technology-page";
 
 export default class ItemListOperation extends Component {
 
@@ -94,7 +93,8 @@ export default class ItemListOperation extends Component {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(this.state.operationsId
+            body: JSON.stringify(
+                this.state.operationsId
             )
         }).then(response => response.json())
     }
