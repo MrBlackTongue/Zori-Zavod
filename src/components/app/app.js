@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
-import './app.css';
 import MiniDrawer from "../panel";
 import TechnologyPage from "../technology-page";
 
-import './app.css'
+import './App.css'
 import FetchRequest from "../../services/fetch-request";
 import PostForm from "../../services/PostForm";
 import PostRequest from "../../services/requests";
