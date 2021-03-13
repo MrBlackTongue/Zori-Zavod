@@ -36,6 +36,10 @@ export default class ZoriZavodService {
         return res
     }
 
+    getAllOperationsHistory = async () => {
+        return await this.getResource(`/record/all/`)
+    }
+
     // getOperation = async (id) => {
     //     const operation = await this.getResource(`/operation/${id}/`)
     //     return this._transformOperation(operation)

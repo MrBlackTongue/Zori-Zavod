@@ -31,3 +31,4 @@ api/operation/delete/{id} -  DELETE операцию по id
 api/tech/add -  POST технологию
 api/tech/add/{id} -  POST операцию с id технологии
 api/tech/{id} -  GET технологию
+api/record/all - GET

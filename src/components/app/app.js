@@ -8,6 +8,7 @@ import PostForm from "../../services/PostForm";
 import PostRequest from "../../services/requests";
 import PostRequestOperation from "../../services/post-request-operation";
 import ItemListOperation from "../item-list-operation";
+import HistoryItemList from "../history-item-list";
 
 export default class App extends Component {
 
@@ -83,6 +84,9 @@ export default class App extends Component {
                 {/*<PostRequest />*/}
 
                 <TechnologyPage />
+
+
+                <HistoryItemList />
 
                 {/*<PostRequestOperation />*/}
 
