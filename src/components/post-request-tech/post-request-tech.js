@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class PostRequest extends Component{
+export default class PostRequestTech extends Component{
     constructor(props) {
         super(props)
 
@@ -40,16 +40,22 @@ export default class PostRequest extends Component{
         const { name } = this.state
         return (
             <div>
-                <form onSubmit={this.submitHandler}>
-                    <div>
-                        <input placeholder='введите технологию'
-                        type='text'
-                        name='name'
-                        value={name}
-                        onChange={this.changeHandler}/>
+                <form onSubmit={this.submitHandler} className='form-inline'>
+                    <div className="form-group mb-2">
+                        <input type='text' readonly className="form-control-plaintext" value='Введите технологию:'/>
                     </div>
-                    <button type='submit'>Отправить</button>
+                    <div className='form-group mx-sm-2 mb-2'>
+                        <input
+                            className="form-control"
+                            placeholder=''
+                            type='text'
+                            name='name'
+                            value={name}
+                            onChange={this.changeHandler}/>
+                    </div>
+                        <input type='submit' value="Добавить" className='btn btn-success mb-2'/>
                 </form>
+
             </div>
         )
     }

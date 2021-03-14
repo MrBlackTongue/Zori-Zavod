@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
 import MiniDrawer from "../panel";
 import TechnologyPage from "../technology-page";
+import PostRequestTech from '../post-request-tech'
 
 import './App.css'
 import FetchRequest from "../../services/fetch-request";
 import PostForm from "../../services/PostForm";
-import PostRequest from "../../services/requests";
+
 import PostRequestOperation from "../../services/post-request-operation";
 import ItemListOperation from "../item-list-operation";
 import HistoryItemList from "../history-item-list";
@@ -78,15 +79,15 @@ export default class App extends Component {
 
                 {/*<MiniDrawer />*/}
 
-                {/*<FetchRequest />*/}
-
-                {/*<PostForm />*/}
-                {/*<PostRequest />*/}
-
                 <TechnologyPage />
 
-
                 <HistoryItemList />
+
+                {/*<PostRequestTech />*/}
+
+
+                {/*<PostForm />*/}
+
 
                 {/*<PostRequestOperation />*/}
 
