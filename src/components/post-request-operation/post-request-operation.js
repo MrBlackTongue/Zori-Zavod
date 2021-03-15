@@ -1,32 +1,57 @@
 import React, { Component } from "react";
+import ZoriZavodService from "../../services/zori-zavod-service";
 
 export default class PostRequestOperation extends Component{
     constructor(props) {
         super(props)
 
+
         this.state = {
-            technology_Id: '',
+            technology: null,
             name: "",
             standard: '',
             ration: '',
         }
+    }
+    zoriZavodService = new ZoriZavodService()
+
+
+    componentDidMount() {
+        this.updateOperation()
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.technologyId !== prevProps.technologyId) {
+            this.updateOperation()
+        }
+    }
+
+    updateOperation() {
+        const { technologyId } = this.props
+        if (!technologyId) {
+            return;
+        }
+
+        this.zoriZavodService
+            .getTechnology(technologyId)
+            .then((technology) => {
+                this.setState({ technology })
+            })
     }
 
     changeHandler = (e) => {
         this.setState({[e.target.name]: e.target.value})
     }
 
-
     submitHandler = (e) => {
         e.preventDefault();
-        fetch(`http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/tech/add/` + this.state.technology_Id, {
+        fetch(`http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/tech/add/${this.state.technology.id}/`, {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                // technology_Id: e.target.technology_Id.value,
                 name: e.target.name.value,
                 standard: e.target.standard.value,
                 ratio: e.target.ratio.value,
@@ -40,22 +65,18 @@ export default class PostRequestOperation extends Component{
 
 
     render() {
-        const { technology_Id, name, standard, ratio } = this.state
+        const { name, standard, ratio } = this.state
         return (
             <div>
-                <form onSubmit={this.submitHandler}>
-                    <div>
-                        <input placeholder='id технологии'
-                            type='text'
-                            name='technology_Id'
-                            value={technology_Id}
-                            onChange={this.changeHandler}/>
-                    </div>
+                <br/>
+                <p>Добавить новую операцию</p>
+                <form onSubmit={this.submitHandler} className='form-inline'>
                     <div>
                         <input placeholder='операция'
                             type='text'
                             name='name'
                             value={name}
+                               className='form-group mx-sm-2 mb-2'
                             onChange={this.changeHandler}/>
                     </div>
                     <div>
@@ -63,16 +84,18 @@ export default class PostRequestOperation extends Component{
                                type='text'
                                name='standard'
                                value={standard}
+                               className='form-group mx-sm-2 mb-2'
                                onChange={this.changeHandler}/>
                     </div>
                     <div>
-                        <input placeholder='ратио'
+                        <input placeholder='коэффициент'
                                type='text'
                                name='ratio'
                                value={ratio}
+                               className='form-group mx-sm-2 mb-2'
                                onChange={this.changeHandler}/>
                     </div>
-                    <button type='submit'>Отправить</button>
+                    <button type='submit' className='btn btn-success mb-2'>Добавить</button>
                 </form>
             </div>
         )

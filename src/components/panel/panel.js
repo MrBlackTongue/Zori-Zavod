@@ -19,6 +19,8 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import GroupOrientation from '../technology-page'
 import Operations from "../operations";
+import TechnologyPage from "../technology-page";
+import HistoryItemList from "../history-item-list";
 
 const drawerWidth = 240;
 
@@ -165,6 +167,7 @@ export default function MiniDrawer() {
                 <div className={classes.toolbar} />
 
                 <GroupOrientation />
+                <HistoryItemList />
                 {/*<Operations />*/}
                 {/*<Typography paragraph>*/}
                 {/*    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt*/}

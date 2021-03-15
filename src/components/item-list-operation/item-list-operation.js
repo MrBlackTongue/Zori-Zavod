@@ -87,7 +87,7 @@ export default class ItemListOperation extends Component {
 
     submitHandler = (e) => {
         e.preventDefault();
-        fetch(`http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/operationAdd`, {
+        fetch(`http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/record/add/`, {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -111,6 +111,7 @@ export default class ItemListOperation extends Component {
 
         return (
             <div>
+
                 <form onSubmit={this.submitHandler}>
 
                     <ul className='item-list list-group'>
@@ -119,7 +120,6 @@ export default class ItemListOperation extends Component {
 
                     <button type='submit' className='btn btn-success' >Отправить</button>
                 </form>
-                {/*<input type='submit'/>*/}
             </div>
         )
     }

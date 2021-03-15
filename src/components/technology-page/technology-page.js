@@ -5,7 +5,7 @@ import TechnologyDetails from "../technology-details/technology-details";
 
 import './technology-page.css'
 import ItemListOperation from "../item-list-operation";
-import OperationDetails from "../operation-details";
+import PostRequestOperation from "../post-request-operation";
 
 export default class TechnologyPage extends Component {
 
@@ -35,8 +35,8 @@ export default class TechnologyPage extends Component {
                 <div className='col-md-6'>
 
                     <TechnologyDetails technologyId={this.state.selectedTechnology} />
+                    <PostRequestOperation technologyId={this.state.selectedTechnology}/>
                     <ItemListOperation  technologyId={this.state.selectedTechnology}/>
-                    {/*<OperationDetails techologyId={this.state.selectedTechnology} />*/}
 
                 </div>
             </div>

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 import './technology-details.css'
 import ZoriZavodService from "../../services/zori-zavod-service";
-import ItemListOperation from "../item-list-operation";
 
 export default class TechnologyDetails extends Component {
 
@@ -42,14 +41,14 @@ export default class TechnologyDetails extends Component {
             return <span>Select a technology from a list</span>
         }
 
-        const { name , operations, standard, ratio } = technology
+        const { id, name , operations  } = technology
 
         return (
             <div className='technology-details card'>
-                <div className='card-body'>
-                    <h4>{name}</h4>
+                <div className='card'>
+                    <h5>{name}</h5>
 
-                    <ul className='list-group list-group-flush'>
+                    {/*<ul className='list-group list-group-flush'>*/}
                         {/*<li className='list-group-item'>*/}
                         {/*    <span className='term'>Операции:</span>*/}
                         {/*    /!*<span>{operations}</span>*!/*/}
@@ -62,7 +61,7 @@ export default class TechnologyDetails extends Component {
                         {/*    <span className='term'>Ratio</span>*/}
                         {/*    <span>{ratio}</span>*/}
                         {/*</li>*/}
-                    </ul>
+                    {/*</ul>*/}
                 </div>
             </div>
         )

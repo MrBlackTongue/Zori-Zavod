@@ -46,10 +46,11 @@ export default class ItemList extends Component {
 
         return (
             <div>
+                <PostRequestTech />
+
                 <ul className="item-list list-group">
                     {items}
                 </ul>
-                <PostRequestTech />
             </div>
 
         );
