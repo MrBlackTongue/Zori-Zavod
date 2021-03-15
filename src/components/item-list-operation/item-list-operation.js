@@ -86,6 +86,7 @@ export default class ItemListOperation extends Component {
 
 
     submitHandler = (e) => {
+        alert(`Операции успешно добавлены!`)
         e.preventDefault();
         fetch(`http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/record/add/`, {
             method: "POST",

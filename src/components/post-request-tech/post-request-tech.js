@@ -5,9 +5,7 @@ export default class PostRequestTech extends Component{
         super(props)
 
         this.state = {
-            // id: '',
             name: "",
-            // operation: ''
         }
     }
 
@@ -17,6 +15,7 @@ export default class PostRequestTech extends Component{
 
 
     submitHandler = (e) => {
+        alert(`Новая технология " ${e.target.name.value}" успешно добавлена!`)
         e.preventDefault();
         fetch('http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/api/tech/add', {
             method: "POST",
@@ -36,8 +35,11 @@ export default class PostRequestTech extends Component{
     }
 
 
+
+
     render() {
         const { name } = this.state
+
         return (
             <div>
                 <form onSubmit={this.submitHandler} className='form-inline'>

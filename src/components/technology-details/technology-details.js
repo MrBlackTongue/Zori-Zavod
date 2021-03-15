@@ -41,7 +41,7 @@ export default class TechnologyDetails extends Component {
             return <span>Select a technology from a list</span>
         }
 
-        const { id, name , operations  } = technology
+        const { name } = technology
 
         return (
             <div className='technology-details card'>
