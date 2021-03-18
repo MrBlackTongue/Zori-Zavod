@@ -29,7 +29,6 @@ export default class ItemListOperation extends Component {
         });
     }
 
-
     // onTechnologySelected = (selectedTechnology) => {
     //     this.setState({selectedTechnology})
     // }
@@ -76,10 +75,7 @@ export default class ItemListOperation extends Component {
                         />
                         &nbsp; {name} ( Стандарт: {standard} ) ( Ратио: {ratio} )
                     </li>
-
-
                 </div>
-
             );
         });
     }
@@ -105,7 +101,7 @@ export default class ItemListOperation extends Component {
         const { operationList } = this.state
 
         if (!operationList) {
-            return <Spinner />
+            return <span></span>
         }
 
         const items = this.renderItems(operationList)

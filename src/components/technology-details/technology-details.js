@@ -38,7 +38,7 @@ export default class TechnologyDetails extends Component {
 
         const { technology } = this.state
         if (!technology) {
-            return <span>Select a technology from a list</span>
+            return <span>Выберите технологию слева</span>
         }
 
         const { name } = technology

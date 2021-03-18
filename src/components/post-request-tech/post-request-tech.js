@@ -13,7 +13,6 @@ export default class PostRequestTech extends Component{
         this.setState({[e.target.name]: e.target.value})
     }
 
-
     submitHandler = (e) => {
         alert(`Новая технология " ${e.target.name.value}" успешно добавлена!`)
         e.preventDefault();
@@ -34,9 +33,6 @@ export default class PostRequestTech extends Component{
             // });
     }
 
-
-
-
     render() {
         const { name } = this.state
 
@@ -44,7 +40,7 @@ export default class PostRequestTech extends Component{
             <div>
                 <form onSubmit={this.submitHandler} className='form-inline'>
                     <div className="form-group mb-2">
-                        <input type='text' readonly className="form-control-plaintext" value='Введите технологию:'/>
+                        <label className=" col-form-label">Введите новую технологию:</label>
                     </div>
                     <div className='form-group mx-sm-2 mb-2'>
                         <input
@@ -57,7 +53,6 @@ export default class PostRequestTech extends Component{
                     </div>
                         <input type='submit' value="Добавить" className='btn btn-success mb-2'/>
                 </form>
-
             </div>
         )
     }

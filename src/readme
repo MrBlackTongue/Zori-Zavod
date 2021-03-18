@@ -32,3 +32,7 @@ api/tech/add -  POST технологию
 api/tech/add/{id} -  POST операцию с id технологии
 api/tech/{id} -  GET технологию
 api/record/all - GET
+
+api/record/delete/{id}
+api/tech/delete/{id}
+api/operation/delete{id}

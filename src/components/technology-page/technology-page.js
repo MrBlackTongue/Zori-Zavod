@@ -10,7 +10,7 @@ import PostRequestOperation from "../post-request-operation";
 export default class TechnologyPage extends Component {
 
     state = {
-        selectedTechnology:  22,
+        selectedTechnology:  null,
         hasError: false
     }
 
