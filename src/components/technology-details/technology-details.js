@@ -44,9 +44,13 @@ export default class TechnologyDetails extends Component {
         const { name } = technology
 
         return (
-            <div className='technology-details card'>
-                <div className='card'>
+            <div className='technology-details card '>
+                <div className='form-inline'>
                     <h5>{name}</h5>
+                </div>
+                <div>
+                    <button type="button" className="btn btn-warning mx-sm-2 mb-2">Изменить</button>
+                    <button type="button" className="btn btn-danger mx-sm-2 mb-2">Удалить</button>
 
                     {/*<ul className='list-group list-group-flush'>*/}
                         {/*<li className='list-group-item'>*/}

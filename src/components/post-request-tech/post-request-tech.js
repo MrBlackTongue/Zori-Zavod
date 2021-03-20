@@ -1,12 +1,14 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 
 export default class PostRequestTech extends Component{
+
     constructor(props) {
         super(props)
 
         this.state = {
             name: "",
         }
+
     }
 
     changeHandler = (e) => {
@@ -38,26 +40,24 @@ export default class PostRequestTech extends Component{
 
         return (
             <div>
-                <form onSubmit={this.submitHandler} className='form-inline'>
-                    <div className="form-group mb-2">
-                        <label className=" col-form-label">Введите новую технологию:</label>
-                    </div>
-                    <div className='form-group mx-sm-2 mb-2'>
-                        <input
-                            className="form-control"
-                            placeholder=''
-                            type='text'
-                            name='name'
-                            value={name}
-                            onChange={this.changeHandler}/>
-                    </div>
+                    <form onSubmit={this.submitHandler} className='form-inline'>
+                        <div className="form-group mb-2">
+                            <label className="col-form-label">Введите новую технологию:</label>
+                        </div>
+                        <div className='form-group mx-sm-2 mb-2'>
+                            <input
+                                className="form-control"
+                                placeholder=''
+                                type='text'
+                                name='name'
+                                value={name}
+                                onChange={this.changeHandler}/>
+                        </div>
                         <input type='submit' value="Добавить" className='btn btn-success mb-2'/>
-                </form>
+                    </form>
             </div>
         )
     }
-
-
 }
 
 

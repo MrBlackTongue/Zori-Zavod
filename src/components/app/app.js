@@ -5,12 +5,14 @@ import ItemListOperation from "../item-list-operation";
 import HistoryItemList from "../history-item-list";
 
 import './App.css'
+import AddNewTechModal from "../modal-window";
 
 export default class App extends Component {
 
     state = {
         hasError: false
     }
+
 
     componentDidCatch() {
         this.setState({ hasError: true})
@@ -20,19 +22,20 @@ export default class App extends Component {
     render() {
 
         return (
+                <div className="app">
 
-            <div className="app">
+                    {/*<MiniDrawer />*/}
+                    <AddNewTechModal />
 
-                {/*<MiniDrawer />*/}
+                    <TechnologyPage />
 
-                <TechnologyPage />
-
-                <HistoryItemList />
-
-                {/*<ItemListOperation />*/}
+                    <HistoryItemList />
 
 
-            </div>
+                    {/*<ItemListOperation />*/}
+
+
+                </div>
         );
     }
 }

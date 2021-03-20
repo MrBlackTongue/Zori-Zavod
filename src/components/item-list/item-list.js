@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import './item-list.css';
 import ZoriZavodService from "../../services/zori-zavod-service";
 import Spinner from "../spinner/spinner";
-import PostRequestTech from "../post-request-tech";
 
 export default class ItemList extends Component {
 
@@ -44,10 +43,9 @@ export default class ItemList extends Component {
 
         const items = this.renderItems(technologyList);
 
+
         return (
             <div>
-                <PostRequestTech />
-
                 <ul className="item-list list-group">
                     {items}
                 </ul>
