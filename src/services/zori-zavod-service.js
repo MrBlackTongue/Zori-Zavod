@@ -40,6 +40,10 @@ export default class ZoriZavodService {
         return await this.getResource(`/record/all/`)
     }
 
+    deleteTechnology = async (id) => {
+        return  await this.getResource(`/tech/delete/${id}/`)
+    }
+
     // getOperation = async (id) => {
     //     const operation = await this.getResource(`/operation/${id}/`)
     //     return this._transformOperation(operation)

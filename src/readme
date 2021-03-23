@@ -22,8 +22,6 @@ http://springreact2.eba-dup8x69j.eu-central-1.elasticbeanstalk.com/
 
 
 
-
-
 api/tech/all - GET все технологии
 api/operation/all - GET все операции
 api/tech/delete/{id} -  DELETE технологию по id

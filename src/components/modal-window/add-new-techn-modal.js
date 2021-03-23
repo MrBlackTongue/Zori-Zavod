@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import PostRequestTech from "../post-request-tech";
 
+
 function rand() {
     return Math.round(Math.random() * 20) - 10;
 }
@@ -32,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AddNewTechModal() {
     const classes = useStyles();
-    // getModalStyle is not a pure function, we roll the style only on the first render
     const [modalStyle] = React.useState(getModalStyle);
     const [open, setOpen] = React.useState(false);
 
@@ -45,7 +45,9 @@ export default function AddNewTechModal() {
     };
 
     const body = (
-        <div style={modalStyle} className={classes.paper}>
+        <div
+            style={modalStyle} className={classes.paper}
+        >
             <PostRequestTech />
             {/*<h2 id="simple-modal-title">Text in a modal</h2>*/}
             {/*<p id="simple-modal-description">*/}
@@ -59,6 +61,7 @@ export default function AddNewTechModal() {
             <button type="button" className='btn btn-success' onClick={handleOpen}>
                 Добавить технологию
             </button>
+
             <Modal
                 open={open}
                 onClose={handleClose}
@@ -66,6 +69,28 @@ export default function AddNewTechModal() {
                 aria-describedby="simple-modal-description"
             >
                 {body}
+                {/*<div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog"*/}
+                {/*     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">*/}
+                {/*    <div className="modal-dialog modal-dialog-centered" role="document">*/}
+                {/*        <div className="modal-content">*/}
+                {/*            <div className="modal-header">*/}
+                {/*                <h5 className="modal-title" id="exampleModalLongTitle">Modal title</h5>*/}
+                {/*                <button type="button" className="close" data-dismiss="modal" aria-label="Close">*/}
+                {/*                    <span aria-hidden="true">&times;</span>*/}
+                {/*                </button>*/}
+                {/*            </div>*/}
+                {/*            <div className="modal-body">*/}
+                {/*                {body}*/}
+
+
+                {/*            </div>*/}
+                {/*            <div className="modal-footer">*/}
+                {/*                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>*/}
+                {/*                <button type="button" className="btn btn-primary">Save changes</button>*/}
+                {/*            </div>*/}
+                {/*        </div>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
             </Modal>
         </div>
     );

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import './item-list-operation.css';
 import ZoriZavodService from "../../services/zori-zavod-service";
-import Spinner from "../spinner/spinner";
 
 export default class ItemListOperation extends Component {
 
@@ -28,10 +27,6 @@ export default class ItemListOperation extends Component {
             operationsId: newArray
         });
     }
-
-    // onTechnologySelected = (selectedTechnology) => {
-    //     this.setState({selectedTechnology})
-    // }
 
     componentDidMount() {
         this.updateOperation()
