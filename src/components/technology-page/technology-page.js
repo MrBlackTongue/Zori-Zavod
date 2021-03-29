@@ -37,7 +37,7 @@ export default class TechnologyPage extends Component {
 
                     <TechnologyDetails technologyId={this.state.selectedTechnology} />
                     {/*<DeleteRequestTech technologyId={this.state.selectedTechnology} />*/}
-                    {/*<PostRequestOperation technologyId={this.state.selectedTechnology}/>*/}
+                    <PostRequestOperation technologyId={this.state.selectedTechnology}/>
                     <ItemListOperation  technologyId={this.state.selectedTechnology}/>
 
                 </div>

@@ -63,12 +63,14 @@ export default class ItemListOperation extends Component {
                         // id={id}
                         // onClick={() => this.props.onItemSelected(id)}
                     >
+                        <label>
                         <input type='checkbox' className='checkbox'
                                id={id}
                                value={id}
                                onChange={this.handleCheckboxChange}
                         />
                         &nbsp; {name} ( Стандарт: {standard} ) ( Ратио: {ratio} )
+                        </label>
                     </li>
                 </div>
             );
