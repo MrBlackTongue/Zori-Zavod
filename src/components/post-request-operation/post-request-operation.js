@@ -66,7 +66,11 @@ export default class PostRequestOperation extends Component{
 
 
     render() {
-        const { name, standard, ratio } = this.state
+        const { name, standard, ratio, technology } = this.state
+
+        if (!technology) {
+            return <span> </span>
+        }
         return (
             <div>
                 <br/>
