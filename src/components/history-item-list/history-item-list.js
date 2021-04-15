@@ -43,9 +43,13 @@ export default class HistoryItemList extends Component {
         const items = this.renderItems(operationsHistoryList)
 
         return (
-            <ul className='item-list list-group'>
-                {items}
-            </ul>
+            <div>
+                <h4>История операций</h4>
+                <ul className='item-list list-group'>
+                    {items}
+                </ul>
+            </div>
+
         )
     }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './item-list-operation.css';
 import ZoriZavodService from "../../services/zori-zavod-service";
+import DeleteRequestOp from "../delete-request-op";
 
 export default class ItemListOperation extends Component {
 
@@ -68,9 +69,14 @@ export default class ItemListOperation extends Component {
                                id={id}
                                value={id}
                                onChange={this.handleCheckboxChange}
+
                         />
-                        &nbsp; {name} ( Стандарт: {standard} ) ( Ратио: {ratio} )
+                        &nbsp; {name} ( Стандарт: {standard} ) ( Коэффициент: {ratio} )
+                            {/*исправить расположение кнопки*/}
+                            <DeleteRequestOp operationId={id} />
+
                         </label>
+
                     </li>
                 </div>
             );
@@ -102,6 +108,8 @@ export default class ItemListOperation extends Component {
         }
 
         const items = this.renderItems(operationList)
+
+        const { id } = operationList
 
         return (
             <div>

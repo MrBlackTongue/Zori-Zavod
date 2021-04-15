@@ -28,7 +28,12 @@ export default class ZoriZavodService {
 
     getTechnology = async (id) => {
         const technology = await this.getResource(`/tech/${id}/`)
-        return this._transformOperations(technology)
+        return this._transformTechnology(technology)
+    }
+
+    getOperation = async (id) => {
+        const operation = await this.getResource(`/operation/${id}/`)
+        return this._transformOperation(operation)
     }
 
     getAllOperationsTech = async (id) => {
@@ -43,11 +48,6 @@ export default class ZoriZavodService {
     deleteTechnology = async (id) => {
         return  await this.getResource(`/tech/delete/${id}/`)
     }
-
-    // getOperation = async (id) => {
-    //     const operation = await this.getResource(`/operation/${id}/`)
-    //     return this._transformOperation(operation)
-    // }
 
     _extractId = (item) => {
         const idRegExp = /\/([0-9]*)\/$/;
@@ -64,24 +64,16 @@ export default class ZoriZavodService {
     //     }
     // }
 
-    // _transformTechnologies = (operation) => {
-    //     return {
-    //         id: operation.id,
-    //         name: operation.name,
-    //         operations: operation.operations,
-    //
-    //     }
-    // }
-
-    _transformTechnology = (technology) => {
+    _transformOperation = (operation) => {
         return {
-            id: this._extractId(technology),
-            name: technology.name,
-            // operations: operation.operations,
+            id: operation.id,
+            name: operation.name,
+            standard: operation.standard,
+            ratio: operation.ratio
         }
     }
 
-    _transformOperations = (technology) => {
+    _transformTechnology = (technology) => {
         return {
             id: technology.id,
             name: technology.name,
@@ -96,13 +88,4 @@ export default class ZoriZavodService {
             )),
         }
     }
-    //
-    // _transformOperation = (operation) => {
-    //     return {
-    //         id: this._extractId(operation),
-    //         name: operation.name,
-    //         operations: operation.operations
-    //     }
-    // }
-
 }

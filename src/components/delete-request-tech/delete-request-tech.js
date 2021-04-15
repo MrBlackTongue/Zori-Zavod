@@ -37,13 +37,6 @@ export default class DeleteRequestTech extends Component {
             })
     }
 
-    deleteDep(depid) {
-        if (window.confirm('Are you sure?'))
-        {
-
-        }
-    }
-
     submitHandler = (e) => {
 
         if (window.confirm('Подтвердите удаление технологии'))
