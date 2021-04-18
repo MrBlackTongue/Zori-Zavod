@@ -2,11 +2,9 @@ import React, { Component } from "react";
 
 import ItemList from '../item-list'
 import TechnologyDetails from "../technology-details/technology-details";
-
 import './technology-page.css'
 import ItemListOperation from "../item-list-operation";
 import PostRequestOperation from "../post-request-operation";
-import DeleteRequestTech from "../delete-request-tech";
 
 export default class TechnologyPage extends Component {
 
@@ -36,7 +34,6 @@ export default class TechnologyPage extends Component {
                 <div className='col-md-6'>
 
                     <TechnologyDetails technologyId={this.state.selectedTechnology} />
-                    {/*<DeleteRequestTech technologyId={this.state.selectedTechnology} />*/}
                     <PostRequestOperation technologyId={this.state.selectedTechnology}/>
                     <ItemListOperation  technologyId={this.state.selectedTechnology}/>
 

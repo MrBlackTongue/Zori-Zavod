@@ -58,26 +58,30 @@ export default class ItemListOperation extends Component {
         return arr.map(({id, name, standard, ratio}) => {
             return (
                 <div>
+                    <label>
 
-                    <li className="list-group-item"
+                    <li className="list-group-item list-inline-item"
                         // key={id}
                         // id={id}
                         // onClick={() => this.props.onItemSelected(id)}
                     >
-                        <label>
                         <input type='checkbox' className='checkbox'
                                id={id}
                                value={id}
                                onChange={this.handleCheckboxChange}
 
                         />
-                        &nbsp; {name} ( Стандарт: {standard} ) ( Коэффициент: {ratio} )
-                            {/*исправить расположение кнопки*/}
-                            <DeleteRequestOp operationId={id} />
+                        &nbsp; {name} ( Стандарт: {standard} ) ( Коэффициент: {ratio} ) &nbsp;
+                            <div className='list-inline-item'>
+                                <DeleteRequestOp operationId={id} />
+                            </div>
 
-                        </label>
+                            {/*исправить расположение кнопки*/}
 
                     </li>
+                    </label>
+
+
                 </div>
             );
         });
@@ -116,7 +120,7 @@ export default class ItemListOperation extends Component {
 
                 <form onSubmit={this.submitHandler}>
 
-                    <ul className='item-list list-group'>
+                    <ul className='item-list list-group list-inline'>
                         {items}
                     </ul>
 

@@ -58,7 +58,7 @@ export default function AddNewTechModal() {
 
     return (
         <div>
-            <button type="button" className='btn btn-success' onClick={handleOpen}>
+            <button type="button" className='btn btn-success mb-2' onClick={handleOpen}>
                 Добавить технологию
             </button>
 

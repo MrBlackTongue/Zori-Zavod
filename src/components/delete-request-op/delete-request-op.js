@@ -57,7 +57,7 @@ export default class DeleteRequestOp extends Component {
         return (
             <div>
                 <form onClick={this.deleteHandler} className='form-inline'>
-                    <input type='submit' value="Удалить" className='btn btn-danger'/>
+                    <input type='submit' value="Х" className='btn btn-danger btn-group-lg'/>
                 </form>
             </div>
         )
